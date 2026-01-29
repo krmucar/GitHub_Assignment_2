@@ -31,7 +31,6 @@ public class GroupAssignment2 {
         {
             arr[i] = (int)(Math.random()*100);
         }
-        scan.close();
         return arr;
     }
     
@@ -57,6 +56,7 @@ public class GroupAssignment2 {
 
         return sum;
     }
+    
     public static int sumOfOddNumbers(int[] arr1)
     {
 
@@ -90,7 +90,44 @@ public class GroupAssignment2 {
             System.out.print(newArr[i] + "," + " ");
         }
         System.out.print(arr[count]);
-        System.out.print("}");
+        System.out.println("}");
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        boolean quit = false;
+
+        System.out.print("Enter an array size: ");
+        int size = in.nextInt();
+
+        int[] arr = createArray(size);
+
+
+        while (!quit) {
+            System.out.print("=== Array Functionality ===\n1. Max\n2. Min\n3. Average\n4. Sum of Even Indexes\n5. Sum of Odd Indexes\n6. Exit\nChoose an option: ");
+            int decision = in.nextInt();
+
+            if (decision == 1) {
+                getMax(arr);
+            }
+            else if (decision == 2) {
+                getMin(arr);
+            }
+            else if (decision == 3) {
+                findAvrgDiff(arr);
+            }
+            else if (decision == 4) {
+                System.out.println(sumOfEvenNumbers(arr));
+            }
+            else if (decision == 5) {
+                System.out.println(sumOfOddNumbers(arr));;
+            }
+            else if (decision == 6) {
+                quit = true;
+            }
+        }
+
+        in.close();
     }
      
 }
