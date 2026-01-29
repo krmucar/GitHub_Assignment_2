@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GroupAssignment2 {
     public static void getMin(int[] arr){
         if(arr.length > 0){
@@ -21,6 +23,16 @@ public class GroupAssignment2 {
             }
             System.out.println("Max value is: " + maxVal);
         }
+    }
+
+    public static int[] createArray(int size) {
+        int[] arr = new int[size];
+        for (int i = 0; i<size; i++)
+        {
+            arr[i] = (int)(Math.random()*100);
+        }
+        scan.close();
+        return arr;
     }
     
     public static int sumOfEvenNumbers(int[] arr1)
