@@ -89,7 +89,7 @@ public class GroupAssignment2 {
             count++;
             System.out.print(newArr[i] + "," + " ");
         }
-        System.out.print(arr[count]);
+        System.out.print(newArr[count]);
         System.out.println("}");
     }
 
@@ -104,8 +104,16 @@ public class GroupAssignment2 {
 
 
         while (!quit) {
-            System.out.print("=== Array Functionality ===\n1. Max\n2. Min\n3. Average\n4. Sum of Even Indexes\n5. Sum of Odd Indexes\n6. Exit\nChoose an option: ");
+            System.out.print("=== Array Functionality ===\n1. Max\n2. Min\n3. Different from Average\n4. Sum of Even Indexes\n5. Sum of Odd Indexes\n6. Exit\nChoose an option: ");
             int decision = in.nextInt();
+
+            System.out.print("The array is: ");
+            System.out.print("{");
+            for(int i = 0; i < arr.length-1; i++){
+                System.out.print(arr[i] + "," + " ");
+            }
+            System.out.print(arr[arr.length - 1]);
+            System.out.println("}");
 
             if (decision == 1) {
                 getMax(arr);
@@ -125,6 +133,7 @@ public class GroupAssignment2 {
             else if (decision == 6) {
                 quit = true;
             }
+            System.out.println();
         }
 
         in.close();
